@@ -1,4 +1,8 @@
 # The Site Configuration
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 # Import the theme
 theme: jekyll-theme-chirpy
