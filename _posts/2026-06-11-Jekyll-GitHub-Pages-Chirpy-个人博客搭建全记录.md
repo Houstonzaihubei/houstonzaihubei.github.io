@@ -1,6 +1,6 @@
 ---
 title: Jekyll + GitHub Pages + Chirpy 个人博客搭建全记录
-date: 2026-06-11 23:50:00 +0800
+date: 2026-06-11 1:50:00 +0800
 categories:
   - 技术记录
   - 环境搭建
