@@ -8,4 +8,75 @@
 {%- endif -%}
 ';
 
-/* append your custom style below */
+/* ========== 自定义暗色美化 ========== */
+
+/* 全站暗色渐变背景 */
+html[data-mode="dark"] body {
+  background:
+    radial-gradient(circle at 15% 10%, rgba(99, 102, 241, 0.16), transparent 28rem),
+    radial-gradient(circle at 85% 20%, rgba(14, 165, 233, 0.12), transparent 26rem),
+    radial-gradient(circle at 50% 100%, rgba(168, 85, 247, 0.10), transparent 30rem),
+    var(--main-bg);
+}
+
+/* 左侧栏 */
+#sidebar {
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(2, 6, 23, 0.98)),
+    radial-gradient(circle at top, rgba(99, 102, 241, 0.25), transparent 18rem);
+  border-right: 1px solid rgba(148, 163, 184, 0.16);
+  box-shadow: 0 0 40px rgba(15, 23, 42, 0.55);
+}
+
+/* 头像 */
+#avatar img {
+  border: 2px solid rgba(255, 255, 255, 0.22);
+  box-shadow:
+    0 0 0 6px rgba(99, 102, 241, 0.12),
+    0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* 网站标题 */
+#sidebar .site-title {
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+/* 副标题 */
+#sidebar .site-subtitle {
+  opacity: 0.86;
+  line-height: 1.7;
+}
+
+/* 首页文章卡片 */
+#post-list .card-wrapper {
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.13);
+  background: rgba(15, 23, 42, 0.48);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.24);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+#post-list .card-wrapper:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.38);
+  box-shadow: 0 18px 45px rgba(2, 6, 23, 0.38);
+}
+
+/* 正文图片 */
+.post-content img {
+  border-radius: 0.9rem;
+  box-shadow: 0 12px 32px rgba(2, 6, 23, 0.28);
+}
+
+/* 代码块 */
+.highlight,
+div[class^="language-"] {
+  border-radius: 0.85rem;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  box-shadow: 0 10px 28px rgba(2, 6, 23, 0.25);
+}
