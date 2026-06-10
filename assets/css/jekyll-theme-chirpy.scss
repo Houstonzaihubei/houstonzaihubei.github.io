@@ -1,3 +1,4 @@
+```scss
 ---
 ---
 
@@ -8,75 +9,113 @@
 {%- endif -%}
 ';
 
-/* ========== 自定义暗色美化 ========== */
+/* ========== 简洁暗色美化：无渐变版本 ========== */
 
-/* 全站暗色渐变背景 */
+/* 全站背景：纯暗色，不用渐变 */
 html[data-mode="dark"] body {
-  background:
-    radial-gradient(circle at 15% 10%, rgba(99, 102, 241, 0.16), transparent 28rem),
-    radial-gradient(circle at 85% 20%, rgba(14, 165, 233, 0.12), transparent 26rem),
-    radial-gradient(circle at 50% 100%, rgba(168, 85, 247, 0.10), transparent 30rem),
-    var(--main-bg);
+  background: #0f1117;
 }
 
-/* 左侧栏 */
+/* 左侧栏：纯色深灰黑 */
 #sidebar {
-  background:
-    linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(2, 6, 23, 0.98)),
-    radial-gradient(circle at top, rgba(99, 102, 241, 0.25), transparent 18rem);
-  border-right: 1px solid rgba(148, 163, 184, 0.16);
-  box-shadow: 0 0 40px rgba(15, 23, 42, 0.55);
+  background: #111827;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* 头像 */
+/* 头像：只做轻微边框和阴影 */
 #avatar img {
-  border: 2px solid rgba(255, 255, 255, 0.22);
-  box-shadow:
-    0 0 0 6px rgba(99, 102, 241, 0.12),
-    0 12px 35px rgba(0, 0, 0, 0.35);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 /* 网站标题 */
 #sidebar .site-title {
-  letter-spacing: 0.04em;
   font-weight: 700;
+  letter-spacing: 0.03em;
 }
 
 /* 副标题 */
 #sidebar .site-subtitle {
-  opacity: 0.86;
+  opacity: 0.8;
   line-height: 1.7;
 }
 
-/* 首页文章卡片 */
+/* 左侧导航 hover：低调一点 */
+#sidebar ul li.nav-item a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 0.6rem;
+}
+
+/* 首页文章卡片：干净、轻微层次 */
 #post-list .card-wrapper {
-  border-radius: 1rem;
-  overflow: hidden;
-  border: 1px solid rgba(148, 163, 184, 0.13);
-  background: rgba(15, 23, 42, 0.48);
-  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.24);
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #151923;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
   transition:
-    transform 0.22s ease,
-    box-shadow 0.22s ease,
-    border-color 0.22s ease;
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
 #post-list .card-wrapper:hover {
-  transform: translateY(-4px);
-  border-color: rgba(99, 102, 241, 0.38);
-  box-shadow: 0 18px 45px rgba(2, 6, 23, 0.38);
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.32);
 }
 
-/* 正文图片 */
+/* 首页文章标题 hover：不要太亮 */
+#post-list .card-wrapper:hover h1,
+#post-list .card-wrapper:hover h2,
+#post-list .card-wrapper:hover h3 {
+  color: #cbd5e1;
+}
+
+/* 正文区域：提高可读性 */
+main {
+  line-height: 1.85;
+}
+
+.post-content {
+  font-size: 1.02rem;
+}
+
+/* 正文图片：轻微圆角即可 */
 .post-content img {
-  border-radius: 0.9rem;
-  box-shadow: 0 12px 32px rgba(2, 6, 23, 0.28);
+  border-radius: 0.6rem;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
 }
 
-/* 代码块 */
+/* 代码块：更规整 */
 .highlight,
 div[class^="language-"] {
-  border-radius: 0.85rem;
-  border: 1px solid rgba(148, 163, 184, 0.15);
-  box-shadow: 0 10px 28px rgba(2, 6, 23, 0.25);
+  border-radius: 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
 }
+
+/* 行内代码 */
+code.highlighter-rouge,
+p code,
+li code {
+  border-radius: 0.3rem;
+  padding: 0.1rem 0.28rem;
+}
+
+/* 右侧目录弱化边框 */
+#toc-wrapper {
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* 页脚弱化 */
+footer {
+  opacity: 0.72;
+}
+
+/* 移动端不要 hover 动画 */
+@media (max-width: 849px) {
+  #post-list .card-wrapper:hover {
+    transform: none;
+  }
+}
+```
